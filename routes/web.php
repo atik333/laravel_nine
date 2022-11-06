@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    
+    
     return view('welcome');
 });
+
+
+Route::get('/forst', function(){
+    app()->make('first_service');
+});
+Route::get('/atik', function(){
+    echo "atik";
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+require __DIR__.'/auth.php';
