@@ -21,9 +21,10 @@ Route::get('/', function () {
 
 
 Route::get('/forst', function(){
+    //Service Container
     app()->make('first_service');
 });
-Route::get('/atik', function(){
+Route::get('/atikatik', function(){
     echo "atik";
 });
 
