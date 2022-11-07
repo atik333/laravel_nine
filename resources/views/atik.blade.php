@@ -1,7 +1,11 @@
 
 
+<?php 
 
-{{ $category['g'];}}
+echo $category['g'];;
 
+
+
+?>
 
 

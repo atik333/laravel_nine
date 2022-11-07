@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Facade;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,11 +21,17 @@ Route::get('/', function () {
 });
 
 
-Route::get('/forst', function(){
-    //Service Container
+
+Route::get('/first', function(){
     app()->make('first_service');
 });
-Route::get('/atikatik', function(){
+
+Route::get('/facade', function(){
+    'myfacade'::text();
+});
+
+
+Route::get('/atik', function(){
     echo "atik";
 });
 
@@ -32,4 +39,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/cache', function () {
+    echo Cache::get('key');
+     Cache::put('hello', 'wold');
+     dd(cache()->get('hello'));
+     
+ });
 require __DIR__.'/auth.php';
