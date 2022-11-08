@@ -28,4 +28,11 @@ Route::get('/new{roll}',function($roll){
 });
 
 
+//Middleware
+
+Route::get('/country', function(){
+      return view('country');
+})->middleware('country');
+
+
 
