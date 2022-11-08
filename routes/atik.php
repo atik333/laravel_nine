@@ -10,15 +10,21 @@ Route::get('/atik', function () {
 });
 Route::get('/index',function(){
       return view('index');
+      
 });
-Route::get('/home',function(){
-      return view('home');
-});
-Route::get('/home/about', function(){
+Route::view('/home','home');
+
+Route::get(md5('/home/about'), function(){
       return view('about');
-});
-Route::get('/home/contact',function(){
+
+      //return redirect('home/contact');
+})->name('/home/about');
+Route::get(md5('/home/contact'),function(){
       return view('contact');
+})->name('/home/contact');
+
+Route::get('/new{roll}',function($roll){
+      return $roll;
 });
 
 
