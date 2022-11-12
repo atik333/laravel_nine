@@ -10,4 +10,8 @@ class FirstController extends Controller
     {
         dd(app());
     }
+    public function country()
+    {
+        return view('country');
+    }
 }

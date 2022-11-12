@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\FirstController;
-
+use App\Http\Controllers\InvokeController;
 
 Route::get('/atik', function () {
     
@@ -42,17 +42,21 @@ Route::get(md5('/home/controller'), 'App\Http\Controllers\FirstController@index'
 
 
 
+//invoke
+Route::get('/invoke', InvokeController::class);
+
+//Controller Middleware
+Route::get('/country', 'App\Http\Controllers\FirstController@country')->middleware('country');
+
+
+
+//Middleware
+// Route::get('/country', function(){
+//       return view('country');
+// })->middleware('country');
+
 
 Route::get('/new{roll}',function($roll){
       return $roll;
 });
-
-
-//Middleware
-
-Route::get('/country', function(){
-      return view('country');
-})->middleware('country');
-
-
 
