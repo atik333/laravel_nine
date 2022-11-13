@@ -6,6 +6,7 @@
 
 <input type="text" name="name" placeholder="Enter your name">
 <input type="email" name="email" placeholder="Enter your email">
+<input type="number" name="phon" placeholder="phon">
 <button type="submit">Submit</button>
 
 

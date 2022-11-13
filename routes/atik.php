@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\FirstController;
 use App\Http\Controllers\InvokeController;
+use App\Http\Controllers\oneController;
 
 Route::get('/atik', function () {
     
@@ -17,7 +18,7 @@ Route::get('/index',function(){
 
 Route::get('/home', function(){
       return view('home');
-});
+})->name('/home');
 
 Route::get(md5('/home/about'), function(){
       return view('about');
@@ -50,7 +51,19 @@ Route::get('/country', 'App\Http\Controllers\FirstController@country')->middlewa
 
 
 //@csrf
-Route::post('/csrf', 'App\Http\Controllers\FirstController@inputStudent')->name('inputdata');
+Route::post('/input', 'App\Http\Controllers\FirstController@inputStudent')->name('inputdata');
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/text', 'App\Http\Controllers\oneController@text');
 
 
 

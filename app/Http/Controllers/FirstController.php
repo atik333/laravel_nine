@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\oneController;
 
 class FirstController extends Controller
 {
@@ -18,7 +19,15 @@ class FirstController extends Controller
     {
         
         //return($request->all()['name']);
-        dd($request->all());
-        
+        //dd($request->all());
+        $data = array();
+        $data['name'] = $request->name;
+        $data['email'] = $request->email;
+        $data['phon'] = $request->phon;
+
+        //dd($data);
+
+        //return redirect()->route('/home');
+        return redirect()->action('App\Http\Controllers\oneController@text');
     }
 }
