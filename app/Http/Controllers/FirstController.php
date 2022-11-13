@@ -8,10 +8,17 @@ class FirstController extends Controller
 {
     public function index()
     {
-        dd(app());
+        return view('controller');
     }
     public function country()
     {
         return view('country');
+    }
+    public function inputStudent(Request $request)
+    {
+        
+        //return($request->all()['name']);
+        dd($request->all());
+        
     }
 }

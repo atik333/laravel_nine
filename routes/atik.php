@@ -49,6 +49,10 @@ Route::get('/invoke', InvokeController::class);
 Route::get('/country', 'App\Http\Controllers\FirstController@country')->middleware('country');
 
 
+//@csrf
+Route::post('/csrf', 'App\Http\Controllers\FirstController@inputStudent')->name('inputdata');
+
+
 
 //Middleware
 // Route::get('/country', function(){
