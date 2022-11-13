@@ -1,5 +1,18 @@
+
+
+
+
+
 <h1>coltroller</h1>
 <?php ?>
+
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+
+
 
 <form action="{{route('inputdata')}}" method="post">
 @csrf

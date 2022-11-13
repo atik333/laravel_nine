@@ -28,6 +28,7 @@ class FirstController extends Controller
         //dd($data);
 
         //return redirect()->route('/home');
-        return redirect()->action('App\Http\Controllers\oneController@text');
+        //return redirect()->action('App\Http\Controllers\oneController@text');
+        return redirect()->back()->with('status', 'data update');
     }
 }
