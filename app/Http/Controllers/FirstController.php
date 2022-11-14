@@ -31,4 +31,10 @@ class FirstController extends Controller
         //return redirect()->action('App\Http\Controllers\oneController@text');
         return redirect()->back()->with('status', 'data update');
     }
+
+
+    public function laravel()
+    {
+        return view('page.laravel',['name'=>'9']);
+    }
 }

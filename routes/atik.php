@@ -54,7 +54,12 @@ Route::get('/country', 'App\Http\Controllers\FirstController@country')->middlewa
 Route::post('/input', 'App\Http\Controllers\FirstController@inputStudent')->name('inputdata');
 
 
+//view
 
+// Route::get('/laravel',function(){
+//       return view('page.laravel');
+// });
+Route::get('/laravel','App\Http\Controllers\FirstController@laravel')->name('/home/laravel');
 
 
 
