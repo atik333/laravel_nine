@@ -33,8 +33,17 @@ class FirstController extends Controller
     }
 
 
-    public function laravel()
+    public function laravel(Request $request)
     {
-        return view('page.laravel',['name'=>'9']);
+        //$request->session()->get('key', 'default');
+        //$request->session()->all();
+        //$request->session()->invalidate();
+        //$request->session()->flush();
+        $request->session()->put('name', 'atik');
+        $request->session()->put('email', 'atik74734@gmail.com');
+        $request->session()->put('phon', '01797455655');
+        //$request->session()->flush('status', 'Task was successful!');
+        $request->session()->now('status', 'Task was successful!');
+        return view('page.laravel',['name'=>$request]);
     }
 }
