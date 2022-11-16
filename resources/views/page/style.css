@@ -1,0 +1,11 @@
+*{
+      margin:0;
+      padding:0;
+}
+.form_section{
+      width:550px;
+      height:auto;
+      margin:auto;
+      border-color: 1px solid #999;
+      text-color:white;
+}

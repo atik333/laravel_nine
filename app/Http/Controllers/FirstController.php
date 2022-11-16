@@ -20,16 +20,28 @@ class FirstController extends Controller
         
         //return($request->all()['name']);
         //dd($request->all());
-        $data = array();
-        $data['name'] = $request->name;
-        $data['email'] = $request->email;
-        $data['phon'] = $request->phon;
+
 
         //dd($data);
 
         //return redirect()->route('/home');
         //return redirect()->action('App\Http\Controllers\oneController@text');
-        return redirect()->back()->with('status', 'data update');
+        //return redirect()->back()->with('status', 'data update');
+
+
+
+        $validated = $request->validate([
+            'name' => 'required|max:55',
+            'email' => 'required|max:55',
+            'phon' => 'required|max:5',
+            'password' => 'required|min:6|max:8',
+        ]);
+
+
+
+
+
+        dd($request->all());
     }
 
 
@@ -46,4 +58,5 @@ class FirstController extends Controller
         $request->session()->now('status', 'Task was successful!');
         return view('page.laravel',['name'=>$request]);
     }
+
 }

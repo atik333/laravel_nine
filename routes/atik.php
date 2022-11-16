@@ -72,6 +72,18 @@ Route::get('/text', 'App\Http\Controllers\oneController@text');
 
 
 
+//form
+
+
+//Route::post('/form', 'App\Http\Controllers\FirstController@FormData')->name('fdata');
+
+// Route::get('/form', function () {
+    
+//       return view('page.from');
+    
+// });
+
+
 //Middleware
 // Route::get('/country', function(){
 //       return view('country');
