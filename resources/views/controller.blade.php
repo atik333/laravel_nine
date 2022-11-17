@@ -64,34 +64,38 @@ button{
 <h1>coltroller</h1>
       <section>
             <div class="form_section">
-                @if($errors->any())
-                <div class="">
-                    <ul>
-                        @foreach($errors->all() as $errors)
-                            <li>{{$errors}}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
+
             <form action="{{route('inputdata')}}" method="post">
 @csrf
                   
                  
                         <div class="text_input">
                               <label for="fname">Name</label>
-                              <input type="text" id="fname" name="name" class=" " value="{{old('name')}}">
+                              <input type="text" id="fname" class="@error('name') is-invalid @enderror" name="name" value="{{old('name')}}">
+                              @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="text_input">
                               <label for="">Email</label>
-                              <input type="email" name="email" class="" value="{{old('email')}}">
+                              <input type="email" name="email" class="@error('email') is-invalid @enderror" value="{{old('email')}}">
+                              @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="text_input">
                               <label for="">Phon</label>
-                              <input type="number" name="phon" class="" value="{{old('phon')}}">
+                              <input type="number" name="phon" class="@error('phon') is-invalid @enderror" value="{{old('phon')}}">
+                              @error('phon')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="text_input">
                               <label for="">Password</label>
-                              <input type="password" name="password" class="" value="{{old('password')}}">
+                              <input type="password" name="password"  value="{{old('password')}}" class="@error('password') is-invalid @enderror">
+                            @error('password')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="text_input">
                               <button class="" type="submit">Submit</button>
@@ -105,3 +109,12 @@ button{
       <!-- <script src="../../js/bootstrap.min.js"></script> -->
 </body>
 </html>
+                <!-- @if($errors->any())
+                <div class="">
+                    <ul>
+                        @foreach($errors->all() as $errors)
+                            <li>{{$errors}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif -->

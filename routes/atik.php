@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\FirstController;
 use App\Http\Controllers\InvokeController;
 use App\Http\Controllers\oneController;
+use Illuminate\Support\Facades\Log;
 
 Route::get('/atik', function () {
     
@@ -92,5 +93,21 @@ Route::get('/text', 'App\Http\Controllers\oneController@text');
 
 Route::get('/new{roll}',function($roll){
       return $roll;
+});
+
+
+
+
+Route::get('/log', function(){
+      // Log::info('this is your age :' .rand(10,30));
+      // return redirect()->to('/home');
+});
+Route::get('/logfile', function(){
+      $logfile = file(storage_path().'/logs/mylog.log');
+      $collection = [];
+      foreach($logfile as $line_number => $line){
+            $collection[]= array('line' => $line_number, 'mylog' =>htmlspecialchars($line));
+      }
+      dd($collection);
 });
 

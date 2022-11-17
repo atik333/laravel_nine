@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\oneController;
+use Illuminate\Support\Facades\Log;
 
 class FirstController extends Controller
 {
@@ -33,15 +34,21 @@ class FirstController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:55',
             'email' => 'required|max:55',
-            'phon' => 'required|max:5',
+            'phon' => 'required|max:11|min:1',
             'password' => 'required|min:6|max:8',
+
+
+
+
         ]);
 
+        Log::channel('studentlog')->info('the contact form submited my :'.rand(1,25)); //25
+
+        return redirect()->back();
 
 
 
-
-        dd($request->all());
+        //dd($request->all());
     }
 
 
@@ -55,7 +62,7 @@ class FirstController extends Controller
         $request->session()->put('email', 'atik74734@gmail.com');
         $request->session()->put('phon', '01797455655');
         //$request->session()->flush('status', 'Task was successful!');
-        $request->session()->now('status', 'Task was successful!');
+        //$request->session()->now('status', 'Task was successful!');
         return view('page.laravel',['name'=>$request]);
     }
 
