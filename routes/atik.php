@@ -4,13 +4,14 @@ use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\FirstController;
 use App\Http\Controllers\InvokeController;
 use App\Http\Controllers\oneController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 Route::get('/atik', function () {
     
       return view('atik');
     
-});
+})->middleware('auth');
 Route::get('/index',function(){
       return view('index');
       
