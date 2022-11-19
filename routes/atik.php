@@ -65,6 +65,18 @@ Route::get('/laravel','App\Http\Controllers\FirstController@laravel')->name('/ho
 
 
 
+// login photo route //
+Route::get('/photo', 'App\Http\Controllers\FirstController@photo')->name('photo')->middleware('verified');
+
+//student id Encrypter
+
+Route::get('/student/{id}', 'App\Http\Controllers\FirstController@studentid')->name('student');
+
+
+//hash
+
+
+Route::post('/password/hash', 'App\Http\Controllers\FirstController@hash')->name('hash');
 
 
 

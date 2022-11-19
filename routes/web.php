@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Facade;
@@ -44,3 +45,5 @@ Route::get('/cache', function () {
      
  });
 require __DIR__.'/auth.php';
+
+

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\oneController;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Crypt;
+use Symfony\Contracts\Service\Attribute\Required;
+use Illuminate\Support\Facades\Hash;
 
 class FirstController extends Controller
 {
@@ -65,5 +68,24 @@ class FirstController extends Controller
         //$request->session()->now('status', 'Task was successful!');
         return view('page.laravel',['name'=>$request]);
     }
+    public function photo()
+    {
+        return view('photo');
+    }
+    public function studentid($id)
+    {
+       $dectypted = Crypt::decryptString($id);
+        //$decrypted = Crypt::decryptString($id);
+        echo $dectypted;
+    }
+    public function hash(Request $request)
+    {
+        $password = hash::make($request->password);
+
+       //return redirect()->back()->withInput();
+       return view('dashboard',['name'=>$password]);
+      
+    }
+
 
 }
