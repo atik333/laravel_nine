@@ -9,6 +9,9 @@
 
                 
                 <div class="card-body">
+                        @if(session()->has('success'))
+                              <div class="alert alert-success" role="alert">{{session()->get('success')}}</div>
+                         @endif
                     <a href="{{route('addclass.index')}}" class="btn btn-primary float-end">Add New</a>
                     <table class="table table-responsive table-strioe">
                         <thead>
@@ -25,7 +28,7 @@
                                 <td>{{$row->class_name}}</td>
                                 <td>
                                       <a class="btn btn-sm btn-success" href="">Edit</a>
-                                      <a class="btn btn-sm btn-danger " href="">Delite</a>
+                                      <a class="btn btn-sm btn-danger " href="{{route('delete.class',$row->id)}}">Delite</a>
                                 </td>
                             </tr>
                               @endforeach

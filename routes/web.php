@@ -59,3 +59,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/class', [App\Http\Controllers\admin\ClassController::class, 'index'])->name('class.index');
 Route::get('/adddata/class', [App\Http\Controllers\Admin\ClassController::class, 'addclass'])->name('addclass.index');
 Route::post('/adddat', [App\Http\Controllers\Admin\ClassController::class, 'classStore'])->name('classdata.store');
+//__delete__//
+Route::get('/delete/{id}', [App\Http\Controllers\Admin\ClassController::class, 'deleteClass'])->name('delete.class');
+
