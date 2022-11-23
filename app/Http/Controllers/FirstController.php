@@ -83,7 +83,7 @@ class FirstController extends Controller
         $password = hash::make($request->password);
 
        //return redirect()->back()->withInput();
-       return view('dashboard',['name'=>$password]);
+       return view('home',['name'=>$password]);
       
     }
 

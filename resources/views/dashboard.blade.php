@@ -1,13 +1,11 @@
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+       {{ __('Dashboard') }}
+            <button class="btn btn-info">atik</button>
         </h2>
-        <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="{{route('photo')}}">Photo</a></li>
-            <li><a href="{{route('student', Crypt::encryptString('2'))}}">student id</a></li>
-        </ul>
+
 
     </x-slot>
 
@@ -17,16 +15,10 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     hi {{Auth::user()->name}}
                 </div>
-                <form action="{{route('hash')}}" method="post">
-                    @csrf
-                    <input type="password" name="password" placeholder="Enter your password"></br>
-                    <button type="submit" >submit</button>
-                </form>
-            </div></br></br>
-            @isset($name)
-                {{$name}}
 
-            @endisset
+
+
+            
         </div>
 
     </div>
