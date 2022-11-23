@@ -51,3 +51,9 @@ require __DIR__.'/auth.php';
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+//class//
+Route::get('/class', [App\Http\Controllers\admin\ClassController::class, 'index'])->name('class.index');

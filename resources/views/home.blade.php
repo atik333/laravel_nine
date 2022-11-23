@@ -41,6 +41,14 @@
                         <input type="text" value="{{$name}}"> <button class="btn btn-primary">Copy</button>
                         @endisset
                 </div>
+
+
+
+                <hr>
+                <div class="">
+                    <a class="btn btn-info" href="{{route('class.index')}}">Class</a>
+                    <a class="btn btn-info" href="">Student</a>
+                </div>
             </div>
         </div>
     </div>
