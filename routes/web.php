@@ -57,3 +57,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //class//
 Route::get('/class', [App\Http\Controllers\admin\ClassController::class, 'index'])->name('class.index');
+Route::get('/adddata/class', [App\Http\Controllers\Admin\ClassController::class, 'addclass'])->name('addclass.index');
+Route::post('/adddat', [App\Http\Controllers\Admin\ClassController::class, 'classStore'])->name('classdata.store');

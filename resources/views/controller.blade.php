@@ -64,7 +64,7 @@ button{
 <h1>coltroller</h1>
       <section>
             <div class="form_section">
-
+                  
             <form action="{{route('inputdata')}}" method="post">
 @csrf
                   

@@ -9,7 +9,7 @@
 
                 
                 <div class="card-body">
-                    <a href="" class="btn btn-primary float-end">Add New</a>
+                    <a href="{{route('addclass.index')}}" class="btn btn-primary float-end">Add New</a>
                     <table class="table table-responsive table-strioe">
                         <thead>
                             <tr>
