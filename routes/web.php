@@ -61,4 +61,9 @@ Route::get('/adddata/class', [App\Http\Controllers\Admin\ClassController::class,
 Route::post('/adddat', [App\Http\Controllers\Admin\ClassController::class, 'classStore'])->name('classdata.store');
 //__delete__//
 Route::get('/delete/{id}', [App\Http\Controllers\Admin\ClassController::class, 'deleteClass'])->name('delete.class');
+//edit
+Route::get('/edit/{id}', [App\Http\Controllers\Admin\ClassController::class, 'editdata'])->name('edit.class');
+Route::post('/edit/store/{id}', [App\Http\Controllers\Admin\ClassController::class, 'editstore'])->name('edit.store');
+
+
 

@@ -27,7 +27,7 @@
                                 <td>{{++$sl}}</td>
                                 <td>{{$row->class_name}}</td>
                                 <td>
-                                      <a class="btn btn-sm btn-success" href="">Edit</a>
+                                      <a class="btn btn-sm btn-success" href="{{route('edit.class',$row->id)}}">Edit</a>
                                       <a class="btn btn-sm btn-danger " href="{{route('delete.class',$row->id)}}">Delite</a>
                                 </td>
                             </tr>

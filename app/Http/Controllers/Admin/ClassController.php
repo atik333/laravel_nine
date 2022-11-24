@@ -42,5 +42,22 @@ class ClassController extends Controller
        
         return redirect()->back()->with('success','successfully Delete');
     }
+    public function editdata($id){
+       
+        $data = DB::table('classes')->where('id',$id)->first();
+       
+        return view('admin.class.editdata',compact('data'));
+    }
+    public function editstore(Request $request,$id){
+        $request->validate([
+            'class_name' => 'required|unique:classes',
+        ]);
+        $data = array(
+
+        'class_name' =>$request->class_name,
+        );
+        DB::table('classes')->where('id',$id)->update($data);
+        return redirect()->back()->with('success','successfully edit data');
+    }
 
 }
