@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Facade;
+
+use App\Http\Controllers\Admin\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,5 +67,8 @@ Route::get('/delete/{id}', [App\Http\Controllers\Admin\ClassController::class, '
 Route::get('/edit/{id}', [App\Http\Controllers\Admin\ClassController::class, 'editdata'])->name('edit.class');
 Route::post('/edit/store/{id}', [App\Http\Controllers\Admin\ClassController::class, 'editstore'])->name('edit.store');
 
+
+//__student croud__//
+Route::resource('students', StudentController::class);
 
 

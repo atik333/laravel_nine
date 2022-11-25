@@ -47,7 +47,7 @@
                 <hr>
                 <div class="">
                     <a class="btn btn-info" href="{{route('class.index')}}">Class</a>
-                    <a class="btn btn-info" href="">Student</a>
+                    <a class="btn btn-info" href="{{route('students.index')}}">Student</a>
                 </div>
             </div>
         </div>
