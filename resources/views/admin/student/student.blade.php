@@ -22,6 +22,7 @@
                                 <th>Roll</th>
                                 <th>Phon</th>
                                 <th>Email</th>
+                                <th>action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,7 +35,8 @@
                                 <td>{{$row->phon}}</td>
                                 <td>{{$row->email}}</td>
                                 <td>
-                                      <a class="btn btn-sm btn-success" href="">Edit</a>
+                                      <a class="btn btn-sm btn-success" href="{{route('students.show',$row->id)}}">View</a>
+                                      <a class="btn btn-sm btn-primary" href="{{route('students.edit',$row->id)}}">Edit</a>
                                       <form action="{{route('students.destroy',$row->id)}}" method="post">
                                       @csrf
                                           <input type='hidden' name="_method" value="DELETE">
