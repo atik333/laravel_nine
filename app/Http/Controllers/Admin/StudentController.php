@@ -15,7 +15,29 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = DB::table('students')->get();
+        //$student = DB::table('students')->get();
+        //join table
+        //$student = DB::table('students')->join('classes','students.class_id','classes.id')->get();
+
+        //left join table
+        $student = DB::table('students')
+        ->leftJoin('classes','students.class_id','classes.id')
+        ->get();
+
+        //right join table
+        // $student = DB::table('students')
+        // ->rightJoin('classes','students.class_id','classes.id')
+        // ->get();
+
+
+
+        //2<.. table join
+        // $student = DB::table('students')
+        // ->join('classes','students.class_id','classes.id')
+        // ->join('new_table','classes.id','new_table.new_id')
+        // ->get();
+
+
 
         return view('admin.student.student', compact('student'));
     }

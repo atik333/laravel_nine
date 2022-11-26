@@ -18,6 +18,7 @@
                             <tr>
                                 <th>SL</th>
                                 <th>Class Id</th>
+                                <th>Class Name</th>
                                 <th>Name</th>
                                 <th>Roll</th>
                                 <th>Phon</th>
@@ -30,6 +31,7 @@
                             <tr>
                                 <td>{{++$sl}}</td>
                                 <td>{{$row->class_id}}</td>
+                                <td>{{$row->class_name}}</td>
                                 <td>{{$row->name}}</td>
                                 <td>{{$row->roll}}</td>
                                 <td>{{$row->phon}}</td>
