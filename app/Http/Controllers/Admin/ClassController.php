@@ -18,7 +18,7 @@ class ClassController extends Controller
     //class data//
     public function index()
     {
-        $class = DB::table('classes')->get();
+        $class = DB::table('classes')->Paginate(3);
         return view('admin.class.class',compact('class'));
     }
     public function addclass()
