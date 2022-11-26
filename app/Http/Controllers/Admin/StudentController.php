@@ -31,6 +31,15 @@ class StudentController extends Controller
 
 
 
+        // 2 table name akoi hoi   
+        // $student = DB::table('students')
+        // ->leftJoin('classes','students.class_id','classes.id')
+        //->select('students.*','classes.name as classname')
+        // ->get();
+
+
+
+
         //2<.. table join
         // $student = DB::table('students')
         // ->join('classes','students.class_id','classes.id')
