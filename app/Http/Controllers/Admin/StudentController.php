@@ -15,14 +15,14 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //$student = DB::table('students')->get();
+        $student = DB::table('students')->get();
         //join table
         //$student = DB::table('students')->join('classes','students.class_id','classes.id')->get();
 
         //left join table
-        $student = DB::table('students')
-        ->leftJoin('classes','students.class_id','classes.id')
-        ->get();
+        // $student = DB::table('students')
+        // ->leftJoin('classes','students.class_id','classes.id')
+        // ->get();
 
         //right join table
         // $student = DB::table('students')
