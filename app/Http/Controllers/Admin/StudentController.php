@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Student;
 
 class StudentController extends Controller
 {
@@ -96,8 +97,10 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-       $show = DB::table('students')->where('id',$id)->first();
-        return view('admin.student.update',compact('show'));
+        $show = Student::all();
+        return response()->json($show);
+    //    $show = DB::table('students')->where('id',$id)->first();
+    //     return view('admin.student.update',compact('show'));
     }
 
     /**
