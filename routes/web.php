@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Facade;
 
 use App\Http\Controllers\Admin\StudentController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Models\Category;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,5 +73,20 @@ Route::post('/edit/store/{id}', [App\Http\Controllers\Admin\ClassController::cla
 
 //__student croud__//
 Route::resource('students', StudentController::class);
+
+
+
+
+
+//__caregory__//
+Route::get('/category/index', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category/create', [CategoryController::class, 'Create'])->name('category.create');
+Route::post('/category/store', [CategoryController::class, 'Store'])->name('category.store');
+Route::post('/category/update/{id}', [CategoryController::class, 'Update'])->name('category.update');
+Route::get('/category/edit/{id}', [CategoryController::class, 'Edit'])->name('category.edit');
+Route::get('/category/delete/{id}', [CategoryController::class, 'Delete'])->name('category.delete');
+
+
+
 
 
