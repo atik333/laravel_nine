@@ -21,11 +21,11 @@ class SubcategoryController extends Controller
     {
          //__query_builder__//
          //$subcategory = DB::table('subcategories')->leftJoin('categories','subcategories.category_id','categories.id')->select('categories.category_name','subcategories.*')->get();
-         $subcategory = DB::table('subcategories')->leftJoin('categories','subcategories.category_id','categories.id')->select('categories.category_name','subcategories.*')->get();
+         //$subcategory = DB::table('subcategories')->leftJoin('categories','subcategories.category_id','categories.id')->select('categories.category_name','subcategories.*')->get();
   
          //__eleoquent__//
          //$category =subcategory::all();
-         //$subcategory = subcategory::all();
+         $subcategory = subcategory::all();
         
         
          //return response()->json($subcategory);

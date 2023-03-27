@@ -46,7 +46,7 @@
                     @foreach($subcategory as $sl=>$row)
                     <tr>
                         <td>{{++$sl}}</td>
-                        <td>{{$row->category_name}}</td>
+                        <td>{{$row->category->category_name}}</td>
                         <td>{{$row->subcategory_name}}</td>
                         <td>{{$row->subcategory_slug}}</td>
                         <td>
