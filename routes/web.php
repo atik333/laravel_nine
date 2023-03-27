@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Facade;
 
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SubcategoryController;
 use App\Models\Category;
 
 /*
@@ -21,8 +22,8 @@ use App\Models\Category;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('dashboard');
+})->middleware('auth');
 
 
 
@@ -78,7 +79,7 @@ Route::resource('students', StudentController::class);
 
 
 
-//__caregory__//
+//__category__//
 Route::get('/category/index', [CategoryController::class, 'index'])->name('category.index');
 Route::get('/category/create', [CategoryController::class, 'Create'])->name('category.create');
 Route::post('/category/store', [CategoryController::class, 'Store'])->name('category.store');
@@ -86,7 +87,9 @@ Route::post('/category/update/{id}', [CategoryController::class, 'Update'])->nam
 Route::get('/category/edit/{id}', [CategoryController::class, 'Edit'])->name('category.edit');
 Route::get('/category/delete/{id}', [CategoryController::class, 'Delete'])->name('category.delete');
 
-
-
+//subcategory
+Route::get('/subcategory/index',[SubcategoryController::class, 'index'])->name('subcategory.index');
+Route::get('/subcategory/create',[SubcategoryController::class, 'Create'])->name('subcategory.create');
+Route::post('/subcategory/store', [SubcategoryController::class, 'Store'])->name('subcategory.store');
 
 

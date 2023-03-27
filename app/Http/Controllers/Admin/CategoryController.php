@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Brian2694\Toastr\Facades\Toastr;
 
 class CategoryController extends Controller
 {
@@ -52,6 +53,11 @@ class CategoryController extends Controller
         //     'category_slug' =>Str::of($request->category_name)->slug('-'),
         // ]);
 
+
+
+        Toastr::success('data save', 'Title', ["positionClass" => "toast-top-right"]);  
+        
+        //$notification=array('messege' => 'category inserted', 'alert-type' => 'success');
         return redirect()->back();
     }
     public function Edit($id)

@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-7">
             <div class="card">
                 <div class="card-header">{{ __('Class') }}</div>
 
@@ -12,7 +12,7 @@
                         @if(session()->has('success'))
                               <div class="alert alert-success" role="alert">{{session()->get('success')}}</div>
                          @endif
-                    <a href="{{route('category.index')}}" class="btn mb-3 btn-primary float-end">All Category</a>
+                   
                     <br>
                   <div class="d-block">
                         <form action="{{route('category.store')}}" method="post">
