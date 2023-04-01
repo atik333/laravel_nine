@@ -50,8 +50,8 @@
                         <td>{{$row->subcategory_name}}</td>
                         <td>{{$row->subcategory_slug}}</td>
                         <td>
-                                <a class="btn btn-sm btn-success" href=""><i class="fas fa-pen-square"></i></a>
-                                <a class="btn btn-sm btn-danger " href=""><i class="fas fa-trash"></i></a>
+                                <a class="btn btn-sm btn-success" href="{{route('subcategory.edit',$row->id)}}"><i class="fas fa-pen-square"></i></a>
+                                <a class="btn btn-sm btn-danger " href="{{route('subcategory.delete',$row->id)}}"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                     @endforeach

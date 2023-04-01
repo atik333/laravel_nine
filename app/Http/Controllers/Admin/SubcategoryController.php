@@ -23,7 +23,7 @@ class SubcategoryController extends Controller
          //$subcategory = DB::table('subcategories')->leftJoin('categories','subcategories.category_id','categories.id')->select('categories.category_name','subcategories.*')->get();
          //$subcategory = DB::table('subcategories')->leftJoin('categories','subcategories.category_id','categories.id')->select('categories.category_name','subcategories.*')->get();
   
-         //__eleoquent__//
+         //__eleoquent__// 
          //$category =subcategory::all();
          $subcategory = subcategory::all();
         
@@ -82,4 +82,41 @@ class SubcategoryController extends Controller
         //$notification=array('messege' => 'category inserted', 'alert-type' => 'success');
         return redirect()->back();
       }
+      public function Delete($id)
+      {
+        $delete = subcategory::destroy($id);
+        return redirect()->back();
+      }
+
+      //edit
+      public function Edit($id)
+      {
+        $category = Category::all();
+        $edit = subcategory::find($id);
+
+        return view('admin.subcategory.edit',compact('category','edit'));
+      }
+      public function Update(Request $request,$id)
+      {
+          //__update_method__//
+  
+      //    $category=Category::find($id);
+      //    $category->Update([
+      //        'category_name' =>$request->category_name,
+      //        'category_slug' =>Str::of($request->category_name)->slug('-'),
+      //    ]);
+  
+  
+  
+         //__save_method__//
+  
+         $subcategory=subCategory::find($id);
+         $subcategory->category_id = $request->category_id;
+         $subcategory->subcategory_name = $request->subcategory_name;
+         $subcategory->subcategory_slug = Str::of($request->subcategory_name)->slug('-');
+         $subcategory->save();
+          
+          return redirect()->route('subcategory.index');
+      }
+
 }
